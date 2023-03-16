@@ -1,17 +1,19 @@
 import React from 'react'
 
-import { Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Dashboard from '../pages/Dashboard'
 import Customers from '../pages/Customers'
 
-const Routes = () => {
+const Router = () => {
     return (
-        <Switch>
-            <Route path='/' exact component={Dashboard}/>
-            <Route path='/customers' component={Customers}/>
-        </Switch>
+        <BrowserRouter>
+        <Routes>
+        <Route  exact path="/" element={<Dashboard/>}></Route>
+        <Route  path="/customers" element={<Customers/>}></Route>
+        </Routes>
+      </BrowserRouter>
     )
 }
 
-export default Routes
+export default Router
